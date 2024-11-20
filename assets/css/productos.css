@@ -1,0 +1,156 @@
+
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.productos-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  gap: 20px;
+}
+
+.categorias {
+  width: 25%;
+  background-color: #f0f0f0;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.categorias h3 {
+  margin-top: 0;
+}
+
+.categorias ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.categorias li {
+  margin-bottom: 10px;
+}
+
+.categorias li a {
+  text-decoration: none;
+  color: #333;
+}
+
+.productos-lista {
+  width: 70%;
+}
+
+.productos-lista h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.productos {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.producto {
+  background-color: white;
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.producto:hover {
+  transform: scale(
+    1.05
+  );
+}
+
+.producto img {
+  width: 100%;
+  height: auto;
+  max-height: 200px;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.producto h4 {
+  font-size: 1.1em;
+  margin: 10px 0;
+}
+
+.producto .precio {
+  font-size: 1.2em;
+  color: #e91e63;
+  margin-bottom: 10px;
+}
+
+.producto button {
+  padding: 10px;
+  background-color: #e91e63;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 1em;
+  transition: background-color 0.3s ease;
+}
+
+.producto button:hover {
+  background-color: #c2185b; 
+}
+
+
+.buscador-container {
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.buscador {
+  width: 80%; 
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.buscador:focus {
+  outline: none;
+  border-color: #e91e63; 
+}
+
+
+@media (max-width: 768px) {
+  .productos-container {
+    flex-direction: column;
+  }
+
+  .categorias {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .productos-lista {
+    width: 100%;
+  }
+
+  .productos {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .productos {
+    grid-template-columns: 1fr;
+  }
+
+  .producto button {
+    width: 100%;
+  }
+}

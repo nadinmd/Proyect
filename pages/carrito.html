@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Carrito - Maquillaje Store</title>
+    <link rel="stylesheet" href="../assets/css/carrito.css" />
+    <link rel="stylesheet" href="../assets/css/navbar.css" />
+  </head>
+  <body>
+
+    <div id="navbar-container"></div>
+
+
+    <section class="carrito-container">
+      <h2>Tu Carrito de Compras</h2>
+
+   
+      <div class="carrito-lista" id="carrito-lista">
+  
+        <div class="producto-carrito">
+          <img src="../assets/img/base-liquida.jpg" alt="Base Líquida" />
+          <div class="detalles">
+            <h4>Base Líquida</h4>
+            <p class="precio">$10.99</p>
+            <input type="number" value="1" min="1" class="cantidad" />
+            <button class="eliminar">Eliminar</button>
+          </div>
+        </div>
+
+        <div class="producto-carrito">
+          <img src="../assets/img/labial-mate.jpg" alt="Labial Mate" />
+          <div class="detalles">
+            <h4>Labial Mate</h4>
+            <p class="precio">$5.99</p>
+            <input type="number" value="1" min="1" class="cantidad" />
+            <button class="eliminar">Eliminar</button>
+          </div>
+        </div>
+      </div>
+
+  
+      <div class="resumen-carrito">
+        <p><strong>Total: </strong><span id="total">16.98</span></p>
+        <button id="vaciar-carrito">Vaciar carrito</button>
+        <button id="realizar-pedido">Realizar pedido</button>
+      </div>
+    </section>
+
+    <script src="../assets/js/navbar.js"></script>
+    <script src="../assets/js/carrito.js"></script>
+  </body>
+</html>
