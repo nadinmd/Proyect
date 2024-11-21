@@ -1,0 +1,41 @@
+
+body,
+html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; 
+}
+
+main {
+  flex-grow: 1; 
+}
+
+
+.footer {
+  background-color: #f8f9fa;
+  padding: 20px;
+  text-align: center;
+}
+
+.footer-content ul {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.footer-content ul li {
+  margin: 0 15px;
+}
+
+.footer-content a {
+  text-decoration: none;
+  color: #333;
+  font-size: 14px;
+}

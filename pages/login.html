@@ -4,24 +4,55 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Iniciar sesión</title>
+    <link rel="stylesheet" href="../assets/css/index.css" />
+    <link rel="stylesheet" href="../assets/css/navbar.css" />
+    <link rel="stylesheet" href="../assets/css/footer.css" />
+    <link rel="stylesheet" href="../assets/css/form.css" />
   </head>
   <body>
-    <h1>Iniciar sesión</h1>
-    <form method="POST">
-      <input
-        type="email"
-        name="email"
-        placeholder="Correo electrónico"
-        required
-      /><br />
-      <input
-        type="password"
-        name="password"
-        placeholder="Contraseña"
-        required
-      /><br />
-      <button type="submit">Iniciar sesión</button>
-    </form>
-    <p>No tienes cuenta? <a href="/register">Regístrate aquí</a></p>
+
+    <div id="navbar-container"></div>
+
+    <section class="form-section">
+      <h1>Iniciar sesión</h1>
+      <form method="POST" class="login-form">
+        <input
+          type="email"
+          name="email"
+          placeholder="Correo electrónico"
+          required
+          class="form-input"
+        /><br />
+        <input
+          type="password"
+          name="password"
+          placeholder="Contraseña"
+          required
+          class="form-input"
+        /><br />
+        <button type="submit" class="form-button">Iniciar sesión</button>
+      </form>
+      <p>
+        No tienes cuenta?
+        <a href="register.html" class="register-link">Regístrate aquí</a>
+      </p>
+    </section>
+
+ 
+    <footer class="footer">
+      <div class="footer-content">
+        <ul>
+          <li><a href="quienes-somos.html">Quiénes somos</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+          <li><a href="terminos.html">Términos y Condiciones</a></li>
+          <li><a href="politicas.html">Política de privacidad</a></li>
+        </ul>
+      </div>
+    </footer>
+
+    <script src="../assets/js/navbar.js"></script>
+    <script src="../assets/js/productos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.2/dist/sweetalert2.min.js"></script>
+    <script src="../assets/js/showCarrito.js"></script>
   </body>
 </html>

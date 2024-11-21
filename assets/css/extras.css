@@ -1,0 +1,158 @@
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f9;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+
+h1,
+h2 {
+  font-family: "Roboto", sans-serif;
+  color: #222;
+}
+
+
+#navbar-container {
+  background-color: #333;
+  padding: 10px;
+}
+
+#navbar-container ul {
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
+  padding: 0;
+}
+
+#navbar-container ul li {
+  margin: 0 15px;
+}
+
+#navbar-container ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+#navbar-container ul li a:hover {
+  color: #f8a8c0;
+}
+
+
+section {
+  margin: 20px;
+  padding: 20px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+
+section p,
+section ul {
+  line-height: 1.6;
+}
+
+section ul {
+  margin-left: 20px;
+}
+
+button {
+  background-color: #f8a8c0;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #ff4d6d;
+}
+
+
+a {
+  color: #f8a8c0;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+a:hover {
+  color: #ff4d6d;
+}
+
+
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 15px 0;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
+footer ul {
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
+  padding: 0;
+}
+
+footer ul li {
+  margin: 0 15px;
+}
+
+footer ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+footer ul li a:hover {
+  color: #f8a8c0;
+}
+
+
+.politica-privacidad,
+.terminos-condiciones,
+.quienes-somos {
+  margin-top: 30px;
+}
+
+.politica-privacidad h1,
+.terminos-condiciones h1,
+.quienes-somos h1 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+}
+
+.politica-privacidad h2,
+.terminos-condiciones h2,
+.quienes-somos h2 {
+  font-size: 1.5rem;
+  margin-top: 20px;
+}
+
+.politica-privacidad p,
+.terminos-condiciones p,
+.quienes-somos p {
+  font-size: 1rem;
+  margin-bottom: 15px;
+}
+
+@media (max-width: 768px) {
+  #navbar-container ul {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  footer ul {
+    flex-direction: column;
+    text-align: center;
+  }
+}

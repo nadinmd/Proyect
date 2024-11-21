@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contacto - Maquillaje Store</title>
+    <link rel="stylesheet" href="../assets/css/index.css" />
+    <link rel="stylesheet" href="../assets/css/navbar.css" />
+    <link rel="stylesheet" href="../assets/css/footer.css" />
+    <link rel="stylesheet" href="../assets/css/contacto.css" />
+  </head>
+  <body>
+    <div id="navbar-container"></div>
+
+    <section class="contact-section">
+      <h1>Contacto</h1>
+
+      <div class="contact-info">
+        <h2>¿Tienes preguntas? Contáctanos</h2>
+        <p>
+          Estamos aquí para ayudarte con cualquier duda o comentario que tengas.
+        </p>
+
+        <div class="contact-details">
+          <h3>Información de contacto</h3>
+          <p><strong>Teléfono:</strong> +57 300432320</p>
+          <p>
+            <strong>Correo electrónico:</strong> contacto@maquillajestore.com
+          </p>
+          <p><strong>Dirección:</strong> Calle 71c 23 423</p>
+        </div>
+
+        <div class="contact-form">
+          <h3>Envía tu mensaje</h3>
+          <form method="POST">
+            <input
+              type="text"
+              name="name"
+              placeholder="Tu nombre"
+              required
+              class="form-input"
+            /><br />
+            <input
+              type="email"
+              name="email"
+              placeholder="Correo electrónico"
+              required
+              class="form-input"
+            /><br />
+            <textarea
+              name="message"
+              placeholder="Escribe tu mensaje"
+              required
+              class="form-input"
+            ></textarea
+            ><br />
+            <button type="submit" class="form-button">Enviar Mensaje</button>
+          </form>
+        </div>
+      </div>
+    </section>
+    <footer class="footer">
+      <div class="footer-content">
+        <ul>
+          <li><a href="quienesomos.html">Quiénes somos</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+          <li><a href="terminos.html">Términos y Condiciones</a></li>
+          <li><a href="politicas.html">Política de privacidad</a></li>
+        </ul>
+      </div>
+    </footer>
+
+    <script src="../assets/js/navbar.js"></script>
+    <script src="../assets/js/productos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.2/dist/sweetalert2.min.js"></script>
+    <script src="../assets/js/showCarrito.js"></script>
+  </body>
+</html>

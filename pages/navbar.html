@@ -1,23 +1,27 @@
 <nav class="navbar">
   <a href="index.html" class="logo">Maquillaje Store</a>
-  <ul>
-    <li><a href="index.html">Inicio</a></li>
-    <li><a href="productos.html">Productos</a></li>
-    <li><a href="#">Buscar</a></li>
-    <li><a href="login.html">Iniciar sesión</a></li>
-    <li>
-      <a href="#" id="carrito-icono"
-        >Carrito (<span id="numero-carrito" class="numero-carrito">0</span>)</a
-      >
-    </li>
-  </ul>
-</nav>
 
-<div id="carrito-flotante" class="carrito-flotante">
-  <h3>Carrito de compras</h3>
-  <div id="productos-carrito">
-    <p>No hay productos en el carrito.</p>
+  <div class="navbar-links">
+    <ul>
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="login.html">Iniciar sesión</a></li>
+      <li><a href="productos.html">Productos</a></li>
+    </ul>
   </div>
-  <button id="vaciar-carrito">Vaciar Carrito</button>
-</div>
-<script src="../assets/js/showCarrito.js"></script>
+
+  <div class="menu-button-wrapper">
+    <input type="checkbox" class="menu-button" id="menu-toggle" />
+    <label class="icon-wrapper" for="menu-toggle">
+      <div class="hamburger">
+        <span class="hamburger-line first"></span>
+        <span class="hamburger-line second"></span>
+        <span class="hamburger-line third"></span>
+      </div>
+    </label>
+    <div class="item-list">
+      <div><a href="index.html">Inicio</a></div>
+      <div><a href="login.html">Iniciar sesión</a></div>
+      <div><a href="productos.html">Productos</a></div>
+    </div>
+  </div>
+</nav>

@@ -6,32 +6,44 @@
     <title>Maquillaje Store</title>
     <link rel="stylesheet" href="../assets/css/index.css" />
     <link rel="stylesheet" href="../assets/css/navbar.css" />
+    <link rel="stylesheet" href="../assets/css/footer.css" />
   </head>
   <body>
-  
     <div id="navbar-container"></div>
 
     <section class="banner">
-      <img src="assets/images/banner.jpg" alt="Publicidad de Maquillaje" />
+      <img src="../assets/img/banner.jpg" alt="Publicidad de Maquillaje" />
     </section>
-
 
     <section class="productos-destacados">
       <h2>Productos Destacados</h2>
       <div class="productos">
         <div class="producto">
-          <img src="assets/images/producto1.jpg" alt="Producto 1" />
+          <img src="../assets/img/base-polvo.png" alt="Producto 1" />
           <p>Base de Maquillaje</p>
-          <button>Añadir al carrito</button>
+          <button><a href="productos.html">VER MAS</a></button>
         </div>
         <div class="producto">
-          <img src="assets/images/producto2.jpg" alt="Producto 2" />
+          <img src="../assets/img/base-liquida.jpg" alt="Producto 2" />
           <p>Labial Rojo</p>
-          <button>Añadir al carrito</button>
+          <button><a href="productos.html">VER MAS</a></button>
         </div>
       </div>
     </section>
-    <script src="../assets/js/showCarrito.js"></script>
-    <script src="../assets/js/navbar.js"></script>
+    <footer class="footer">
+      <div class="footer-content">
+        <ul>
+          <li><a href="quienesomos.html">Quiénes somos</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+          <li><a href="terminos.html">Términos y Condiciones</a></li>
+          <li><a href="politicas.html">Política de privacidad</a></li>
+        </ul>
+      </div>
+    </footer>
   </body>
+
+  <script src="../assets/js/navbar.js"></script>
+  <script src="../assets/js/productos.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.2/dist/sweetalert2.min.js"></script>
+  <script src="../assets/js/showCarrito.js"></script>
 </html>

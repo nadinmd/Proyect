@@ -1,7 +1,7 @@
-
+let carrito = [];
 let carritoCount = 0;
 
-const productos = [
+let productos = [
   {
     id: 1,
     nombre: "Base Líquida",
@@ -27,7 +27,7 @@ const productos = [
     id: 4,
     nombre: "Base en Polvo",
     precio: 12.99,
-    imagen: "base-polvo.jpg",
+    imagen: "base-polvo.png",
     categoria: "Bases",
   },
   {
@@ -46,11 +46,9 @@ const productos = [
   },
 ];
 
-let carrito = [];
-
 function mostrarProductos(categoria = null, busqueda = "") {
   const contenedorProductos = document.getElementById("productos-lista");
-  contenedorProductos.innerHTML = ""; 
+  contenedorProductos.innerHTML = "";
 
   const productosFiltrados = productos.filter((producto) => {
     const coincideCategoria = categoria
@@ -62,72 +60,41 @@ function mostrarProductos(categoria = null, busqueda = "") {
     return coincideCategoria && coincideBusqueda;
   });
 
-  productosFiltrados.forEach((producto) => {
-    const productoElemento = document.createElement("div");
-    productoElemento.classList.add("producto");
+  if (productosFiltrados.length === 0) {
+    contenedorProductos.innerHTML = "<p>No se encontraron productos.</p>";
+  } else {
+    productosFiltrados.forEach((producto) => {
+      const productoElemento = document.createElement("div");
+      productoElemento.classList.add("producto");
 
-    productoElemento.innerHTML = `
-          <img src="../assets/img/${producto.imagen}" alt="${producto.nombre}" />
-          <h4>${producto.nombre}</h4>
-          <p class="precio">$${producto.precio}</p>
-          <p class="descripcion">¡Una excelente opción para tu maquillaje diario!</p>
-          <button onclick="agregarAlCarrito(${producto.id})">Agregar al carrito</button>
-        `;
+      productoElemento.innerHTML = `
+        <img src="../assets/img/${producto.imagen}" alt="${producto.nombre}" />
+        <h4>${producto.nombre}</h4>
+        <p class="precio">$${producto.precio}</p>
+        <p class="descripcion">¡Una excelente opción para tu maquillaje diario!</p>
+        <button onclick="agregarAlCarrito(${producto.id})">Agregar al carrito</button>
+      `;
 
-    contenedorProductos.appendChild(productoElemento);
-  });
+      contenedorProductos.appendChild(productoElemento);
+    });
+  }
 }
-
-
-mostrarProductos();
-
-
-document
-  .getElementById("categoria-bases")
-  .addEventListener("click", (event) => {
-    event.preventDefault(); 
-    const busqueda = document.getElementById("buscador").value;
-    mostrarProductos("Bases", busqueda);
-  });
-
-document
-  .getElementById("categoria-labiales")
-  .addEventListener("click", (event) => {
-    event.preventDefault();
-    const busqueda = document.getElementById("buscador").value;
-    mostrarProductos("Labiales", busqueda);
-  });
-
-document
-  .getElementById("categoria-sombras")
-  .addEventListener("click", (event) => {
-    event.preventDefault();
-    const busqueda = document.getElementById("buscador").value;
-    mostrarProductos("Sombras", busqueda);
-  });
-
-
-document.getElementById("buscador").addEventListener("input", (event) => {
-  const busqueda = event.target.value;
-  mostrarProductos(null, busqueda);
-});
-
 
 function agregarAlCarrito(idProducto) {
   const producto = productos.find((producto) => producto.id === idProducto);
   if (producto) {
-    carrito.push(producto); 
-    carritoCount++; 
-    actualizarCarrito(); 
-    actualizarContadorCarrito(); 
-    showAlert(); 
+    carrito.push(producto);
+    carritoCount++;
+    actualizarCarrito();
+    actualizarContadorCarrito();
+    actualizarTotal();
+    showAlert("Producto agregado al carrito!");
   }
 }
 
-
 function actualizarCarrito() {
   const carritoContenedor = document.getElementById("productos-carrito");
-  carritoContenedor.innerHTML = ""; 
+  carritoContenedor.innerHTML = "";
 
   if (carrito.length === 0) {
     carritoContenedor.innerHTML = "<p>No hay productos en el carrito.</p>";
@@ -136,9 +103,9 @@ function actualizarCarrito() {
       const productoElemento = document.createElement("div");
       productoElemento.classList.add("producto-carrito");
       productoElemento.innerHTML = `
-          <img src="../assets/img/${producto.imagen}" alt="${producto.nombre}" />
-          <p>${producto.nombre} - $${producto.precio}</p>
-        `;
+        <img src="../assets/img/${producto.imagen}" alt="${producto.nombre}" />
+        <p>${producto.nombre} - $${producto.precio}</p>
+      `;
       carritoContenedor.appendChild(productoElemento);
     });
   }
@@ -146,15 +113,34 @@ function actualizarCarrito() {
 
 function actualizarContadorCarrito() {
   const numeroCarrito = document.getElementById("numero-carrito");
-  numeroCarrito.textContent = carritoCount; 
+  numeroCarrito.textContent = carritoCount;
 }
 
+function actualizarTotal() {
+  const totalCarrito = document.getElementById("total-carrito");
+  const total = carrito.reduce((acc, producto) => acc + producto.precio, 0);
+  totalCarrito.textContent = `Total: $${total.toFixed(2)}`;
+}
 
-function showAlert() {
+function vaciarCarrito() {
+  carrito = [];
+  carritoCount = 0;
+  actualizarCarrito();
+  actualizarContadorCarrito();
+  actualizarTotal();
+  showAlert("Carrito vaciado!");
+}
+
+function realizarCompra() {
+  carrito = [];
+  carritoCount = 0;
+  actualizarCarrito();
+  actualizarContadorCarrito();
+  actualizarTotal();
   Swal.fire({
     position: "top-end",
     icon: "success",
-    title: "Producto agregado al carrito!",
+    title: "¡Compra realizada con éxito!",
     showConfirmButton: false,
     timer: 2000,
     toast: true,
@@ -163,3 +149,45 @@ function showAlert() {
     timerProgressBar: true,
   });
 }
+
+function showAlert(message) {
+  Swal.fire({
+    position: "top-end",
+    icon: "success",
+    title: message,
+    showConfirmButton: false,
+    timer: 2000,
+    toast: true,
+    background: "#4CAF50",
+    color: "#fff",
+    timerProgressBar: true,
+  });
+}
+
+document.getElementById("categoria-bases").addEventListener("click", () => {
+  const textoBusqueda = document.getElementById("buscador").value;
+  mostrarProductos("Bases", textoBusqueda);
+});
+
+document.getElementById("categoria-labiales").addEventListener("click", () => {
+  const textoBusqueda = document.getElementById("buscador").value;
+  mostrarProductos("Labiales", textoBusqueda);
+});
+
+document.getElementById("categoria-sombras").addEventListener("click", () => {
+  const textoBusqueda = document.getElementById("buscador").value;
+  mostrarProductos("Sombras", textoBusqueda);
+});
+
+document.getElementById("buscador").addEventListener("input", (event) => {
+  const textoBusqueda = event.target.value;
+  const categoriaSeleccionada = document.querySelector(
+    ".categoria-seleccionada"
+  );
+  const categoria = categoriaSeleccionada
+    ? categoriaSeleccionada.textContent
+    : null;
+  mostrarProductos(categoria, textoBusqueda);
+});
+
+mostrarProductos();

@@ -6,21 +6,21 @@
     <title>Productos - Maquillaje Store</title>
     <link rel="stylesheet" href="../assets/css/productos.css" />
     <link rel="stylesheet" href="../assets/css/carrito.css" />
-   
+    <link rel="stylesheet" href="../assets/css/footer.css" />
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.2/dist/sweetalert2.min.css"
     />
-
-
     <link rel="stylesheet" href="../assets/css/navbar.css" />
   </head>
   <body>
-   
     <div id="navbar-container"></div>
 
     <div class="buscador-container">
       <input type="text" id="buscador" placeholder="Buscar producto..." />
+      <a href="#" id="carrito-icono">
+        Carrito <span id="numero-carrito" class="numero-carrito">0</span>
+      </a>
     </div>
 
     <section class="productos-container">
@@ -35,15 +35,37 @@
 
       <div class="productos-lista">
         <h2>Todos los productos</h2>
-        <div class="productos" id="productos-lista">
-     
-        </div>
+        <div class="productos" id="productos-lista"></div>
       </div>
     </section>
-
-    <script src="../assets/js/navbar.js"></script>
-    <script src="../assets/js/productos.js"></script>
-    <script src="../assets/js/showCarrito.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.2/dist/sweetalert2.min.js"></script>
+ 
+    <div id="modal-carrito" class="modal-carrito">
+      <div class="modal-contenido">
+        <h3>Carrito de Compras</h3>
+        <div id="productos-carrito" class="productos-carrito">
+          <p>No hay productos en el carrito.</p>
+        </div>
+        <p id="total-carrito">Total: $0.00</p>
+        <button id="realizar-compra" class="btn btn-secondary">
+          Realizar Compra
+        </button>
+        <button id="cerrar-carrito" class="btn btn-secondary">Cerrar</button>
+      </div>
+    </div>
+    <footer class="footer">
+      <div class="footer-content">
+        <ul>
+          <li><a href="quienesomos.html">Quiénes somos</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+          <li><a href="terminos.html">Términos y Condiciones</a></li>
+          <li><a href="politicas.html">Política de privacidad</a></li>
+        </ul>
+      </div>
+    </footer>
   </body>
+  <script src="../assets/js/showCarrito.js"></script>
+  <script src="../assets/js/navbar.js"></script>
+  <script src="../assets/js/productos.js"></script>
+  <script src="../assets/js/carrito.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.2/dist/sweetalert2.min.js"></script>
 </html>
